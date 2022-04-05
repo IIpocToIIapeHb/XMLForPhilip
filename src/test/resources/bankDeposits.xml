@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<bankDeposits  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://www.epam.tc.com/bankDeposit"
-         xsi:schemaLocation="http://www.epam.tc.com/bankDeposit bankDeposits.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<bankDeposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.example.com/bankDeposits"
+      xsi:schemaLocation="http://www.example.com/bankDeposits  bankDeposits.xsd">
 
-    <individualDeposit id="111111" currency = "EURO">
+    <individualDeposit id="GE0M354123" currency = "EURO">
         <bankName>JPMorganChase</bankName>
         <amount>10000</amount>
         <percent>5</percent>
@@ -12,7 +12,7 @@
         <passportNumber>kh1111</passportNumber>
     </individualDeposit>
 
-    <individualDeposit id="222222" country="UK" currency = "EURO">
+    <individualDeposit id="GE0M34123" currency = "EURO">
         <bankName>HSBC</bankName>
         <amount>1000</amount>
         <percent>10</percent>
@@ -21,7 +21,7 @@
         <passportNumber>mp2222</passportNumber>
     </individualDeposit>
 
-    <fixedTermedDeposit id="333333" country="USA" currency = "DOLLAR">
+    <fixedTermedDeposit id="a333vvB3" country="USA" currency = "DOLLAR">
         <bankName>BankOfAmerica</bankName>
         <amount>50000</amount>
         <percent>1</percent>
@@ -31,7 +31,7 @@
         <numberOfYears>5</numberOfYears>
     </fixedTermedDeposit>
 
-    <fixedTermedDeposit id="444444"  currency = "YUAN">
+    <fixedTermedDeposit id="n4444444"  currency = "YUAN">
         <bankName>	BankofChina</bankName>
         <amount>50000</amount>
         <percent>2</percent>
@@ -41,7 +41,7 @@
         <numberOfYears>3</numberOfYears>
     </fixedTermedDeposit>
 
-    <legalEntityDeposit id="555555"  currency = "DOLLAR">
+    <legalEntityDeposit id="HJ555555"  currency = "DOLLAR">
         <bankName>BankofSpain</bankName>
         <amount>9000</amount>
         <percent>3</percent>
@@ -49,7 +49,7 @@
         <numberOfFounders>2</numberOfFounders>
     </legalEntityDeposit>
 
-    <legalEntityDeposit id="666666" country="Canada"  currency = "DOLLAR">
+    <legalEntityDeposit id="lF666666" country="Canada"  currency = "DOLLAR">
         <bankName>RoyalBankofCanada</bankName>
         <amount>2500</amount>
         <percent>4</percent>
