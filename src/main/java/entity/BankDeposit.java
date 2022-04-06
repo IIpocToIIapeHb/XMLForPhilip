@@ -3,13 +3,13 @@ package entity;
 public abstract class BankDeposit {
 
     private String id;
-    private String country;
+    private String country = "Earth";
     private String bankName;
     private int amount;
     private int percent;
-    private CurrencyType currency;
+    private String currency;
 
-    public BankDeposit(String id, String country, String bankName, int amount, int percent, CurrencyType currency) {
+    public BankDeposit(String id, String country, String bankName, int amount, int percent, String currency) {
         this.id = id;
         this.country = country;
         this.bankName = bankName;
@@ -41,7 +41,7 @@ public abstract class BankDeposit {
         return percent;
     }
 
-    public CurrencyType getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
@@ -65,7 +65,7 @@ public abstract class BankDeposit {
         this.percent = percent;
     }
 
-    public void setCurrency(CurrencyType currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 

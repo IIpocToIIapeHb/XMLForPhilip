@@ -6,7 +6,7 @@ public class IndividualDeposit extends BankDeposit {
     private String depositorSurname;
     private String passportNumber;
 
-    public IndividualDeposit(String id, String country, String bankName, int amount, int percent, CurrencyType currency, String depositorName, String depositorSurname, String passportNumber) {
+    public IndividualDeposit(String id, String country, String bankName, int amount, int percent, String currency, String depositorName, String depositorSurname, String passportNumber) {
         super(id, country, bankName, amount, percent, currency);
         this.depositorName = depositorName;
         this.depositorSurname = depositorSurname;
@@ -75,9 +75,10 @@ public class IndividualDeposit extends BankDeposit {
     @Override
     public String toString() {
         return "IndividualDeposit{" +
+                super.toString()+
                 "depositorName='" + depositorName + '\'' +
                 ", depositorSurname='" + depositorSurname + '\'' +
                 ", passportNumber='" + passportNumber + '\'' +
-                '}';
+                "} ";
     }
 }

@@ -4,7 +4,7 @@ public class FixedTermedDeposit extends  IndividualDeposit{
 
     private int numberOfYears;
 
-    public FixedTermedDeposit(String id, String country, String bankName, int amount, int percent, CurrencyType currency, String depositorName, String depositorSurname, String passportNumber, int numberOfYears) {
+    public FixedTermedDeposit(String id, String country, String bankName, int amount, int percent, String currency, String depositorName, String depositorSurname, String passportNumber, int numberOfYears) {
         super(id, country, bankName, amount, percent, currency, depositorName, depositorSurname, passportNumber);
         this.numberOfYears = numberOfYears;
     }
@@ -46,7 +46,7 @@ public class FixedTermedDeposit extends  IndividualDeposit{
 
     @Override
     public String toString() {
-        return "FixedTermedDeposit{" +
+        return "FixedTermedDeposit{" + super.toString()+
                 "numberOfYears=" + numberOfYears +
                 '}';
     }
