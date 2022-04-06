@@ -42,5 +42,6 @@ public class testXMLValidator {
         boolean result = xmlValidator.isValid(NOT_EXISTED_XML_FILE);
         //then
         assertFalse(result);
+
     }
 }
