@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bankDeposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns="http://www.example.com/bankDeposits"
-      xsi:schemaLocation="http://www.example.com/bankDeposits  bankDeposits.xsd">
+<bank-deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.example.com/bankDeposits"
+               xsi:schemaLocation="http://www.example.com/bankDeposits  bankDeposits.xsd">
 
-    <individualDeposit id="GE0M354123" country="China" currency = "EURO">
-        <bankName>JPMorganChase</bankName>
+    <individual-deposit id="GE0M354123" country="China" currency = "EURO">
+        <bank-name>JPMorganChase</bank-name>
         <amount>10000</amount>
         <percent>5</percent>
-        <depositorName>Adolf</depositorName>
-        <depositorSurname>Hittler</depositorSurname>
-        <passportNumber>kh1111</passportNumber>
-    </individualDeposit>
+        <depositor-name>Adolf</depositor-name>
+        <depositor-surname>Hittler</depositor-surname>
+        <passport-number>kh1111</passport-number>
+    </individual-deposit>
 
-    <individualDeposit id="GE0M34123" currency = "EURO">
-        <bankName>HSBC</bankName>
+    <individual-deposit id="GE0M34123" currency = "EURO">
+        <bank-name>HSBC</bank-name>
         <amount>1000</amount>
         <percent>10</percent>
-        <depositorName>Eric</depositorName>
-        <depositorSurname>Browser</depositorSurname>
-        <passportNumber>mp2222</passportNumber>
-    </individualDeposit>
+        <depositor-name>Eric</depositor-name>
+        <depositor-surname>Browser</depositor-surname>
+        <passport-number>mp2222</passport-number>
+    </individual-deposit>
 
-    <fixedTermedDeposit id="a333vvB3" country="USA" currency = "DOLLAR">
-        <bankName>BankOfAmerica</bankName>
+    <fixed-termed-deposit id="a333vvB3" country="USA" currency = "DOLLAR">
+        <bank-name>BankOfAmerica</bank-name>
         <amount>50000</amount>
         <percent>1</percent>
-        <depositorName>Oscar</depositorName>
-        <depositorSurname>Coul</depositorSurname>
-        <passportNumber>mp3333</passportNumber>
-        <numberOfYears>5</numberOfYears>
-    </fixedTermedDeposit>
+        <depositor-name>Oscar</depositor-name>
+        <depositor-surname>Coul</depositor-surname>
+        <passport-number>mp3333</passport-number>
+        <number-of-years>5</number-of-years>
+    </fixed-termed-deposit>
 
-    <fixedTermedDeposit id="n4444444"  currency = "YUAN">
-        <bankName>	BankofChina</bankName>
+    <fixed-termed-deposit id="n4444444" currency = "YUAN">
+        <bank-name>	BankofChina</bank-name>
         <amount>50000</amount>
         <percent>2</percent>
-        <depositorName>Julia</depositorName>
-        <depositorSurname>Shelf</depositorSurname>
-        <passportNumber>mp44444</passportNumber>
-        <numberOfYears>3</numberOfYears>
-    </fixedTermedDeposit>
+        <depositor-name>Julia</depositor-name>
+        <depositor-surname>Shelf</depositor-surname>
+        <passport-number>mp44444</passport-number>
+        <number-of-years>3</number-of-years>
+    </fixed-termed-deposit>
 
-    <legalEntityDeposit id="HJ555555"  currency = "DOLLAR">
-        <bankName>BankofSpain</bankName>
+    <legal-entity-deposit id="HJ555555" currency = "DOLLAR">
+        <bank-name>BankofSpain</bank-name>
         <amount>9000</amount>
         <percent>3</percent>
-        <companyName>Bubbles</companyName>
-        <numberOfFounders>2</numberOfFounders>
-    </legalEntityDeposit>
+        <company-name>Bubbles</company-name>
+        <number-of-founders>2</number-of-founders>
+    </legal-entity-deposit>
 
-    <legalEntityDeposit id="lF666666" country="Canada"  currency = "DOLLAR">
-        <bankName>RoyalBankofCanada</bankName>
+    <legal-entity-deposit id="lF666666" country="Canada" currency = "DOLLAR">
+        <bank-name>RoyalBankofCanada</bank-name>
         <amount>2500</amount>
         <percent>4</percent>
-        <companyName>Umbrella</companyName>
-        <numberOfFounders>500</numberOfFounders>
-    </legalEntityDeposit>
+        <company-name>Umbrella</company-name>
+        <number-of-founders>500</number-of-founders>
+    </legal-entity-deposit>
 
-</bankDeposits>
+</bank-deposits>

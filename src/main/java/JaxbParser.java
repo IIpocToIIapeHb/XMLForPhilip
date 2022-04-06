@@ -1,8 +1,10 @@
+import entity.BankDeposit;
+
 import java.util.List;
 
 public class JaxbParser implements Parser{
     @Override
-    public List<bankDeposit> parse(String file) {
+    public List<BankDeposit> parse(String file) {
         return null;
     }
 }

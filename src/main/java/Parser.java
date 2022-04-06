@@ -1,5 +1,7 @@
+import entity.BankDeposit;
+
 import java.util.List;
 
 public interface Parser {
-    List<bankDeposit> parse(String file);
+    List<BankDeposit> parse(String file);
 }
