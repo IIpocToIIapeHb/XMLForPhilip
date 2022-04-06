@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bankDeposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.example.com/bankDeposits"
+      xsi:schemaLocation="http://www.example.com/bankDeposits  bankDeposits.xsd">
+
+    <individualDeposit id="GE0M354123" country="China" currency = "EURO">
+        <bankName>JPMorganChase</bankName>
+        <amount>10000</amount>
+        <percent>5</percent>
+        <depositorName>Adolf</depositorName>
+        <depositorSurname>Hittler</depositorSurname>
+        <passportNumber>kh1111</passportNumber>
+    </individualDeposit>
+
+    <individualDeposit id="GE0M34123" currency = "EURO">
+        <bankName>HSBC</bankName>
+        <amount>1000</amount>
+        <percent>10</percent>
+        <depositorName>Eric</depositorName>
+        <depositorSurname>Browser</depositorSurname>
+        <passportNumber>mp2222</passportNumber>
+    </individualDeposit>
+
+    <fixedTermedDeposit id="a333vvB3" country="USA" currency = "DOLLAR">
+        <bankName>BankOfAmerica</bankName>
+        <amount>50000</amount>
+        <percent>1</percent>
+        <depositorName>Oscar</depositorName>
+        <depositorSurname>Coul</depositorSurname>
+        <passportNumber>mp3333</passportNumber>
+        <numberOfYears>5</numberOfYears>
+    </fixedTermedDeposit>
+
+    <fixedTermedDeposit id="n4444444"  currency = "YUAN">
+        <bankName>	BankofChina</bankName>
+        <amount>50000</amount>
+        <percent>2</percent>
+        <depositorName>Julia</depositorName>
+        <depositorSurname>Shelf</depositorSurname>
+        <passportNumber>mp44444</passportNumber>
+        <numberOfYears>3</numberOfYears>
+    </fixedTermedDeposit>
+
+    <legalEntityDeposit id="HJ555555"  currency = "DOLLAR">
+        <bankName>BankofSpain</bankName>
+        <amount>9000</amount>
+        <percent>3</percent>
+        <companyName>Bubbles</companyName>
+        <numberOfFounders>2</numberOfFounders>
+    </legalEntityDeposit>
+
+    <legalEntityDeposit id="lF666666" country="Canada"  currency = "DOLLAR">
+        <bankName>RoyalBankofCanada</bankName>
+        <amount>2500</amount>
+        <percent>4</percent>
+        <companyName>Umbrella</companyName>
+        <numberOfFounders>500</numberOfFounders>
+    </legalEntityDeposit>
+
+</bankDeposits>

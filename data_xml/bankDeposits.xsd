@@ -26,8 +26,8 @@
             <element name="percent" type="int"/>
         </sequence>
         <attribute name="id"  type="tns:Id"  use="required"/>
-        <attribute name="country" type="string" use="optional"/>
-        <attribute name="currency" use="required" default="EURO">
+        <attribute name="country" type="string" use="optional" default="Earth"/>
+        <attribute name="currency" use="required" >
             <simpleType>
                 <restriction base="string">
                     <enumeration value="EURO"/>
