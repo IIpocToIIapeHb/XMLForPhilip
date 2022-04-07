@@ -1,6 +1,6 @@
-package by.bome;
+package by.home;
 
-import by.bome.entity.BankDeposit;
+import by.home.entity.BankDeposit;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;

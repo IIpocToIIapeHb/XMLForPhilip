@@ -1,6 +1,6 @@
-package by.bome;
+package by.home;
 
-import by.bome.entity.*;
+import by.home.entity.*;
 import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;

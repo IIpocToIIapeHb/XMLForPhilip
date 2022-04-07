@@ -1,4 +1,4 @@
-package by.bome.entity;
+package by.home;
 
 public enum BankDepositEnum {
     BANK_DEPOSITS("bank-deposits"),

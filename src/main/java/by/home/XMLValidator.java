@@ -1,4 +1,4 @@
-package by.bome;
+package by.home;
 
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;

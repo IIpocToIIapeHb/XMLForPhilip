@@ -1,4 +1,4 @@
-package by.bome.entity;
+package by.home.entity;
 
 public class IndividualDeposit extends BankDeposit {
 

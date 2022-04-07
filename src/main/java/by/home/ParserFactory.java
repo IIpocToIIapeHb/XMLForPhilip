@@ -1,4 +1,4 @@
-package by.bome;
+package by.home;
 
 public class ParserFactory {
 

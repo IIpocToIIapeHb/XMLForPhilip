@@ -1,6 +1,6 @@
-import by.bome.entity.LegalEntityDeposit;
-import by.bome.SaxParser;
-import by.bome.entity.*;
+import by.home.entity.LegalEntityDeposit;
+import by.home.SaxParser;
+import by.home.entity.*;
 import org.junit.Test;
 
 import java.util.ArrayList;

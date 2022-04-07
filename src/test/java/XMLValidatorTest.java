@@ -1,4 +1,4 @@
-import by.bome.XMLValidator;
+import by.home.XMLValidator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

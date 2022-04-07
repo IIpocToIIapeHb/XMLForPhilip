@@ -1,11 +1,10 @@
-package by.bome;
+package by.home;
 
-import by.bome.Parser;
-import by.bome.entity.BankDeposit;
+import by.home.entity.BankDeposit;
 
 import java.util.List;
 
-public class JaxbParser implements Parser {
+public class DomParser implements Parser {
     @Override
     public List<BankDeposit> parse(String file) {
         return null;
