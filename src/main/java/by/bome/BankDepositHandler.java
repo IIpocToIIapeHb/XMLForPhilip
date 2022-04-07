@@ -1,7 +1,6 @@
-import entity.BankDeposit;
-import entity.FixedTermedDeposit;
-import entity.IndividualDeposit;
-import entity.LegalEntityDeposit;
+package by.bome;
+
+import by.bome.entity.*;
 import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -19,6 +18,10 @@ public class BankDepositHandler extends DefaultHandler {
     private BankDepositEnum currentEnum = null;
     private EnumSet<BankDepositEnum> withText;
 
+    private final String INDIVIDUAL_DEPOSIT_VALUE = BankDepositEnum.INDIVIDUAL_DEPOSIT.getValue();
+    private final String FIXED_TERMED_DEPOSIT_VALUE = BankDepositEnum.FIXED_TERMED_DEPOSIT.getValue();
+    private final String LEGAL_ENTITY_DEPOSIT_VALUE = BankDepositEnum.LEGAL_ENTITY_DEPOSIT.getValue();
+
     public BankDepositHandler() {
         bankDeposits = new ArrayList<BankDeposit>();
         withText = EnumSet.range(BankDepositEnum.BANK_NAME, BankDepositEnum.NUMBER_OF_FOUNDERS);
@@ -29,37 +32,15 @@ public class BankDepositHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if ("individual-deposit".equals(localName)) {
+        if (INDIVIDUAL_DEPOSIT_VALUE.equals(localName)) {
             current = new IndividualDeposit();
-            current.setId(attrs.getValue(0));
-            if (attrs.getLength() == 3) {
-                current.setCountry(attrs.getValue(1));
-                current.setCurrency(attrs.getValue(2));
-            }
-            if (attrs.getLength() == 2) {
-                current.setCurrency(attrs.getValue(1));
-            }
-
-        } else if ("fixed-termed-deposit".equals(localName)) {
+            fillingBankDepositWithAttributes(attrs);
+        } else if (FIXED_TERMED_DEPOSIT_VALUE.equals(localName)) {
             current = new FixedTermedDeposit();
-            current.setId(attrs.getValue(0));
-            if (attrs.getLength() == 3) {
-                current.setCountry(attrs.getValue(1));
-                current.setCurrency(attrs.getValue(2));
-            }
-            if (attrs.getLength() == 2) {
-                current.setCurrency(attrs.getValue(1));
-            }
-        } else if ("legal-entity-deposit".equals(localName)) {
+            fillingBankDepositWithAttributes(attrs);
+        } else if (LEGAL_ENTITY_DEPOSIT_VALUE.equals(localName)) {
             current = new LegalEntityDeposit();
-            current.setId(attrs.getValue(0));
-            if (attrs.getLength() == 3) {
-                current.setCountry(attrs.getValue(1));
-                current.setCurrency(attrs.getValue(2));
-            }
-            if (attrs.getLength() == 2) {
-                current.setCurrency(attrs.getValue(1));
-            }
+            fillingBankDepositWithAttributes(attrs);
         } else {
             BankDepositEnum temp = BankDepositEnum.valueOf(localName.toUpperCase().replace("-", "_"));
             if (withText.contains(temp)) {
@@ -68,12 +49,23 @@ public class BankDepositHandler extends DefaultHandler {
         }
     }
 
+    private void fillingBankDepositWithAttributes(Attributes attrs) {
+        current.setId(attrs.getValue(0));
+        if (attrs.getLength() == 3) {
+            current.setCountry(attrs.getValue(1));
+            current.setCurrency(attrs.getValue(2));
+        }
+        if (attrs.getLength() == 2) {
+            current.setCurrency(attrs.getValue(1));
+        }
+    }
+
     public void endElement(String uri, String localName, String qName) {
-        if ("individual-deposit".equals(localName)) {
+        if (INDIVIDUAL_DEPOSIT_VALUE.equals(localName)) {
             bankDeposits.add(current);
-        } else if ("fixed-termed-deposit".equals(localName)) {
+        } else if (FIXED_TERMED_DEPOSIT_VALUE.equals(localName)) {
             bankDeposits.add(current);
-        } else if ("legal-entity-deposit".equals(localName)) {
+        } else if (LEGAL_ENTITY_DEPOSIT_VALUE.equals(localName)) {
             bankDeposits.add(current);
         }
     }

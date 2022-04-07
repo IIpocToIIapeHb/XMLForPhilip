@@ -1,12 +1,10 @@
+import by.bome.XMLValidator;
 import org.junit.Test;
-import org.xml.sax.SAXException;
-
-import java.io.File;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class testXMLValidator {
+public class XMLValidatorTest {
 
     private final static String VALID_XML_FILE = "src/test/resources/testBankDeposits.xml";
     private final static String INVALID_XML_FILE = "src/test/resources/InvalidTestBankDeposits.xml";

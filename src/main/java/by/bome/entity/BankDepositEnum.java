@@ -1,3 +1,5 @@
+package by.bome.entity;
+
 public enum BankDepositEnum {
     BANK_DEPOSITS("bank-deposits"),
     INDIVIDUAL_DEPOSIT("individual-deposit"),

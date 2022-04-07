@@ -1,4 +1,4 @@
-package entity;
+package by.bome.entity;
 
 public class LegalEntityDeposit extends BankDeposit {
 
@@ -7,6 +7,12 @@ public class LegalEntityDeposit extends BankDeposit {
 
     public LegalEntityDeposit(String id, String country, String bankName, int amount, int percent, String currency, String companyName,int numberOfNumbers) {
         super(id, country, bankName, amount, percent, currency);
+        this.companyName = companyName;
+        this.numberOfNumbers = numberOfNumbers;
+    }
+
+    public LegalEntityDeposit(String id, String bankName, int amount, int percent, String currency, String companyName,int numberOfNumbers) {
+        super(id, bankName, amount, percent, currency);
         this.companyName = companyName;
         this.numberOfNumbers = numberOfNumbers;
     }

@@ -1,4 +1,4 @@
-package entity;
+package by.bome.entity;
 
 public abstract class BankDeposit {
 
@@ -12,6 +12,14 @@ public abstract class BankDeposit {
     public BankDeposit(String id, String country, String bankName, int amount, int percent, String currency) {
         this.id = id;
         this.country = country;
+        this.bankName = bankName;
+        this.amount = amount;
+        this.percent = percent;
+        this.currency = currency;
+    }
+
+    public BankDeposit(String id, String bankName, int amount, int percent, String currency) {
+        this.id = id;
         this.bankName = bankName;
         this.amount = amount;
         this.percent = percent;
@@ -77,7 +85,9 @@ public abstract class BankDeposit {
         if (!(o instanceof BankDeposit)){
             return false;
         }
+
         BankDeposit that = (BankDeposit) o;
+
         if (getAmount() != that.getAmount()){
             return false;
         }
@@ -93,7 +103,7 @@ public abstract class BankDeposit {
         if (!getBankName().equals(that.getBankName())){
             return false;
         }
-        return getCurrency() == that.getCurrency();
+        return getCurrency().equals(that.getCurrency());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package entity;
+package by.bome.entity;
 
 public class FixedTermedDeposit extends  IndividualDeposit{
 
@@ -6,6 +6,11 @@ public class FixedTermedDeposit extends  IndividualDeposit{
 
     public FixedTermedDeposit(String id, String country, String bankName, int amount, int percent, String currency, String depositorName, String depositorSurname, String passportNumber, int numberOfYears) {
         super(id, country, bankName, amount, percent, currency, depositorName, depositorSurname, passportNumber);
+        this.numberOfYears = numberOfYears;
+    }
+
+    public FixedTermedDeposit(String id, String bankName, int amount, int percent, String currency, String depositorName, String depositorSurname, String passportNumber, int numberOfYears) {
+        super(id, bankName, amount, percent, currency, depositorName, depositorSurname, passportNumber);
         this.numberOfYears = numberOfYears;
     }
 

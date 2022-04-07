@@ -1,3 +1,5 @@
+package by.bome;
+
 public class ParserFactory {
 
     public Parser create(ParserType type){

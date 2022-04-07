@@ -1,4 +1,6 @@
-import entity.BankDeposit;
+package by.bome;
+
+import by.bome.entity.BankDeposit;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -7,7 +9,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class SaxParser implements Parser{
+public class SaxParser implements Parser {
 
     private final static org.apache.log4j.Logger LOGGER = Logger.getLogger(SaxParser.class);
 

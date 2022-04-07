@@ -1,4 +1,6 @@
-import entity.BankDeposit;
+package by.bome;
+
+import by.bome.entity.BankDeposit;
 
 import java.util.List;
 
