@@ -84,28 +84,22 @@ public class BankDepositHandler extends DefaultHandler {
                     current.setPercent(Integer.parseInt(s));
                     break;
                 case DEPOSITOR_NAME:
-                    IndividualDeposit individualDeposit = (IndividualDeposit) current;
-                    individualDeposit.setDepositorName(s);
+                    ((IndividualDeposit) current).setDepositorName(s);
                     break;
                 case DEPOSITOR_SURNAME:
-                    IndividualDeposit individualDeposit_1 = (IndividualDeposit) current;
-                    individualDeposit_1.setDepositorSurname(s);
+                    ((IndividualDeposit) current).setDepositorSurname(s);
                     break;
                 case PASSPORT_NUMBER:
-                    IndividualDeposit individualDeposit_2 = (IndividualDeposit) current;
-                    individualDeposit_2.setPassportNumber(s);
+                    ((IndividualDeposit) current).setPassportNumber(s);
                     break;
                 case NUMBER_OF_YEARS:
-                    FixedTermedDeposit fixedTermedDeposit = (FixedTermedDeposit) current;
-                    fixedTermedDeposit.setNumberOfYears(Integer.parseInt(s));
+                    ((FixedTermedDeposit) current).setNumberOfYears(Integer.parseInt(s));
                     break;
                 case COMPANY_NAME:
-                    LegalEntityDeposit legalEntityDeposit = (LegalEntityDeposit) current;
-                    legalEntityDeposit.setCompanyName(s);
+                    ((LegalEntityDeposit) current).setCompanyName(s);
                     break;
                 case NUMBER_OF_FOUNDERS:
-                    LegalEntityDeposit legalEntityDeposit_1 = (LegalEntityDeposit) current;
-                    legalEntityDeposit_1.setNumberOfNumbers(Integer.parseInt(s));
+                    ((LegalEntityDeposit) current).setNumberOfNumbers(Integer.parseInt(s));
                     break;
                 default:
                     throw new EnumConstantNotPresentException(

@@ -7,6 +7,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SaxParser implements Parser {
@@ -15,6 +16,7 @@ public class SaxParser implements Parser {
 
     private BankDepositHandler handler;
     private XMLReader reader;
+    private List<BankDeposit> bankDeposits;
 
     public SaxParser(){
         handler = new BankDepositHandler();
@@ -28,7 +30,6 @@ public class SaxParser implements Parser {
 
     @Override
     public List<BankDeposit> parse(String file) {
-        List<BankDeposit> bankDeposits;
         try {
             reader.parse(file);
         } catch (SAXException e) {
