@@ -1,7 +1,10 @@
-import by.home.SaxParserException;
-import by.home.entity.LegalEntityDeposit;
+import by.home.DomParser;
 import by.home.SaxParser;
-import by.home.entity.*;
+import by.home.SaxParserException;
+import by.home.entity.BankDeposit;
+import by.home.entity.FixedTermedDeposit;
+import by.home.entity.IndividualDeposit;
+import by.home.entity.LegalEntityDeposit;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,7 +14,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 
-public class SaxParserTest {
+public class DomParserTest {
 
     private final static String VALID_XML_FILE = "src/test/resources/testBankDeposits.xml";
     private final static String INVALID_XML_FILE = "not_existed_file.xml";
@@ -24,9 +27,9 @@ public class SaxParserTest {
     @Test
     public void testParseShouldReturnListOfBankDeposits() throws SaxParserException {
         //given
-        SaxParser saxParser = new SaxParser();
+        DomParser domParser = new DomParser();
         //when
-        List<BankDeposit> realList = saxParser.parse(VALID_XML_FILE);
+        List<BankDeposit> realList = domParser.parse(VALID_XML_FILE);
         //then
         assertEquals(new ArrayList<>(EXPECTED_LIST),realList);
     }

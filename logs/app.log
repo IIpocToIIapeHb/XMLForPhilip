@@ -1516,3 +1516,16 @@ org.xml.sax.SAXParseException; systemId: file:///C:/Users/jreopervonf1/Desktop/%
 2022-04-07 17:36:32 INFO  by.home.XMLValidator:37 - src/test/resources/testBankDeposits.xml is valid.
 2022-04-07 17:44:57 INFO  by.home.XMLValidator:37 - data_xml/bankDeposits.xml is valid.
 2022-04-07 17:54:50 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 10:24:04 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 10:24:27 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 10:25:18 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 11:02:51 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 11:03:09 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:03:47 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:18:15 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:21:38 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:25:26 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:26:50 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 12:30:23 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 14:00:50 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.
+2022-04-08 14:01:20 INFO  XMLValidator:38 - data_xml/bankDeposits.xml is valid.

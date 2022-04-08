@@ -20,20 +20,16 @@ public class SaxParser implements Parser {
 
     public SaxParser(){
         handler = new BankDepositHandler();
-        try {
-            reader = XMLReaderFactory.createXMLReader();
-            reader.setContentHandler(handler);
-        } catch (SAXException e) {
-            LOGGER.error("ошибка SAX парсера: " + e);
-        }
     }
 
     @Override
-    public List<BankDeposit> parse(String file) {
+    public List<BankDeposit> parse(String file) throws SaxParserException {
         try {
+            reader = XMLReaderFactory.createXMLReader();
+            reader.setContentHandler(handler);
             reader.parse(file);
         } catch (SAXException e) {
-            System.err.print("ошибка SAX парсера: " + e);
+            throw new SaxParserException(e.getMessage(),e);
         } catch (IOException e) {
             System.err.print("ошибка I/О потока: " + e);
         }
