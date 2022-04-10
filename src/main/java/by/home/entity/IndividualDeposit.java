@@ -1,9 +1,20 @@
 package by.home.entity;
 
-public class IndividualDeposit extends BankDeposit {
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement(namespace="http://www.example.com/bankDeposits",name = "individual-deposit")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(namespace="http://www.example.com/bankDeposits",propOrder = {
+        "depositorName",
+        "depositorSurname",
+        "passportNumber"
+})
+public class IndividualDeposit extends BankDeposit {
+    @XmlElement(required = true, name = "depositor-name")
     private String depositorName;
+    @XmlElement(required = true, name = "depositor-surname")
     private String depositorSurname;
+    @XmlElement(required = true, name = "passport-number")
     private String passportNumber;
 
     public IndividualDeposit(String id, String country, String bankName, int amount, int percent, String currency, String depositorName, String depositorSurname, String passportNumber) {

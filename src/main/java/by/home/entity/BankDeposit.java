@@ -1,13 +1,40 @@
-package by.home.entity;
 
+
+package by.home.entity;
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;
+
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(namespace="http://www.example.com/bankDeposits")
+@XmlSeeAlso({IndividualDeposit.class,LegalEntityDeposit.class})
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {
+        "bankName",
+        "amount",
+        "percent"
+})
 public abstract class BankDeposit {
 
+    @XmlAttribute(required = true)
+    @XmlID
     private String id;
+
+    @XmlAttribute(required = false)
     private String country = "Earth";
-    private String bankName;
-    private int amount;
-    private int percent;
+
+    @XmlAttribute(required = true)
     private String currency;
+
+    @XmlElement(name = "bank-name", required = true)
+    private String bankName;
+
+    @XmlElement(required = true)
+    private int amount;
+
+    @XmlElement(required = true)
+    private int percent;
+
 
     public BankDeposit(String id, String country, String bankName, int amount, int percent, String currency) {
         this.id = id;

@@ -1,8 +1,18 @@
 package by.home.entity;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(namespace="http://www.example.com/bankDeposits",name = "legal-entity-deposit")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {
+        "companyName",
+        "numberOfNumbers"
+})
 public class LegalEntityDeposit extends BankDeposit {
 
+    @XmlElement(required = true, name = "company-name")
     private String companyName;
+    @XmlElement(required = true, name = "number-of-numbers")
     private int numberOfNumbers;
 
     public LegalEntityDeposit(String id, String country, String bankName, int amount, int percent, String currency, String companyName,int numberOfNumbers) {

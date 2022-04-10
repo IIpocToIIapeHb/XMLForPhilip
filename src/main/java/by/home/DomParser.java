@@ -1,9 +1,6 @@
 package by.home;
 
-import by.home.entity.BankDeposit;
-import by.home.entity.FixedTermedDeposit;
-import by.home.entity.IndividualDeposit;
-import by.home.entity.LegalEntityDeposit;
+import by.home.entity.*;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -46,40 +43,26 @@ public class DomParser implements Parser {
             LOGGER.error("Ошибка конфигурации парсера: " + e);
         }
 
-        fillingBankDepositsList(BankDepositEnum.INDIVIDUAL_DEPOSIT, file);
-        fillingBankDepositsList(BankDepositEnum.FIXED_TERMED_DEPOSIT, file);
-        fillingBankDepositsList(BankDepositEnum.LEGAL_ENTITY_DEPOSIT, file);
-
-        return bankDeposits;
-    }
-
-
-    private void fillingBankDepositsList(BankDepositEnum type, String file) throws SaxParserException {
-
-        Document doc = null;
-
         try {
+            Document doc = null;
             doc = docBuilder.parse(file);
             Element root = doc.getDocumentElement();
-            NodeList depositsList = root.getElementsByTagName(type.getValue());
+            NodeList depositsList  = root.getElementsByTagName("*");
 
             for (int i = 0; i < depositsList.getLength(); i++) {
                 Element depositElement = (Element) depositsList.item(i);
-                BankDeposit bankDeposit;
-                switch (type) {
-                    case INDIVIDUAL_DEPOSIT:
-                        bankDeposit = parseIndividualDeposit(depositElement);
-                        break;
-                    case LEGAL_ENTITY_DEPOSIT:
-                        bankDeposit = parseLegalEntityDeposit(depositElement);
-                        break;
-                    case FIXED_TERMED_DEPOSIT:
-                        bankDeposit = parseFixedTermedDeposit(depositElement);
-                        break;
-                    default:
-                        throw new UnsupportedOperationException("Unknown type=" + type);
+                BankDeposit bankDeposit=null;
+                if (depositElement.getTagName()==BankDepositEnum.INDIVIDUAL_DEPOSIT.getValue()) {
+                    bankDeposit = parseIndividualDeposit(depositElement);
+                }else if (depositElement.getTagName()==BankDepositEnum.LEGAL_ENTITY_DEPOSIT.getValue()) {
+                    bankDeposit = parseLegalEntityDeposit(depositElement);
+                }else if (depositElement.getTagName()==BankDepositEnum.FIXED_TERMED_DEPOSIT.getValue()) {
+                    bankDeposit = parseFixedTermedDeposit(depositElement);
                 }
-                bankDeposits.add(bankDeposit);
+                   if ( bankDeposit!=null) {
+
+                       bankDeposits.add(bankDeposit);
+                   }
             }
 
         } catch (IOException e) {
@@ -87,6 +70,14 @@ public class DomParser implements Parser {
         } catch (SAXException e) {
             throw new SaxParserException(e.getMessage(),e);
         }
+
+        return bankDeposits;
+    }
+
+
+    private void fillingBankDepositsList(BankDepositEnum type, String file) throws SaxParserException {
+
+
     }
 
 
