@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bank-deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://www.example.com/bankDeposits"
+               xsi:schemaLocation="http://www.example.com/bankDeposits  testBankDeposits.xsd">
+
+    <individual-deposit id="GE0M354123" country="China" currency = "EURO">
+        <bank-name>JPMorganChase</bank-name>
+        <amount>10000</amount>
+        <percent>5</percent>
+        <depositor-name>Adolf</depositor-name>
+        <depositor-surname>Hittler</depositor-surname>
+        <passport-number>kh1111</passport-number>
+    </individual-deposit>
+
+
+    <fixed-termed-deposit id="a333vvB3" country="USA" currency = "DOLLAR">
+        <bank-name>BankOfAmerica</bank-name>
+        <amount>50000</amount>
+        <percent>1</percent>
+        <depositor-name>Oscar</depositor-name>
+        <depositor-surname>Coul</depositor-surname>
+        <passport-number>mp3333</passport-number>
+        <number-of-years>5</number-of-years>
+    </fixed-termed-deposit>
+
+
+    <legal-entity-deposit id="HJ555555" currency = "DOLLAR">
+        <bank-name>BankofSpain</bank-name>
+        <amount>9000</amount>
+        <percent>3</percent>
+        <company-name>Bubbles</company-name>
+        <number-of-founders>2</number-of-founders>
+    </legal-entity-deposit>
+
+
+
+</bank-deposits>

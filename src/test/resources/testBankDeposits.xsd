@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/bankDeposits"
+        xmlns:tns="http://www.example.com/bankDeposits" elementFormDefault="qualified">
+
+
+    <element name="bank-deposit" type="tns:BankDeposit" abstract="true"/>
+    <element name="individual-deposit" type="tns:IndividualDeposit" substitutionGroup="tns:bank-deposit"/>
+    <element name="fixed-termed-deposit" type="tns:FixedTermedDeposit"
+             substitutionGroup="tns:bank-deposit"/>
+    <element name="legal-entity-deposit" type="tns:LegalEntityDeposit"
+             substitutionGroup="tns:bank-deposit"/>
+
+    <element name="bank-deposits">
+        <complexType>
+            <sequence>
+                <element ref="tns:bank-deposit" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="BankDeposit">
+        <sequence>
+            <element name="bank-name" type="string"/>
+            <element name="amount" type="int"/>
+            <element name="percent" type="int"/>
+        </sequence>
+        <attribute name="id"  type="tns:Id"  use="required"/>
+        <attribute name="country" type="string" use="optional" default="Earth"/>
+        <attribute name="currency" use="required" >
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="EURO"/>
+                    <enumeration value="DOLLAR"/>
+                    <enumeration value="YUAN"/>
+                    <enumeration value="BEL_RUBLE"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <complexType name="IndividualDeposit">
+        <complexContent>
+            <extension base="tns:BankDeposit">
+                <sequence>
+                    <element name="depositor-name" type="string"/>
+                    <element name="depositor-surname" type="string"/>
+                    <element name="passport-number" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="FixedTermedDeposit">
+        <complexContent>
+            <extension base="tns:IndividualDeposit">
+                <sequence>
+                    <element name="number-of-years" type="int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="LegalEntityDeposit">
+        <complexContent>
+            <extension base="tns:BankDeposit">
+                <sequence>
+                    <element name="company-name" type="string"/>
+                    <element name="number-of-founders" type="int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name = "Id">
+        <restriction base="ID">
+            <pattern value="([a-zA-Z])[a-zA-Z0-9]{7,19}"/>
+        </restriction>
+    </simpleType>
+</schema>
