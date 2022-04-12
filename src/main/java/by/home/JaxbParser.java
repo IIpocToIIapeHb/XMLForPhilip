@@ -12,7 +12,7 @@ import java.util.List;
 
 public class JaxbParser implements Parser {
     @Override
-    public List<BankDeposit> parse(String file) {
+    public List<BankDeposit> parse(String file) throws JaxbParserExceprion {
         List<BankDeposit> list = null;
         try {
             JAXBContext jc = JAXBContext.newInstance(BankDeposits.class);
@@ -21,9 +21,9 @@ public class JaxbParser implements Parser {
             BankDeposits bankDeposits = (BankDeposits) u.unmarshal(reader);
             list = bankDeposits.getList();
         } catch (JAXBException e) {
-            e.printStackTrace();
+            throw new JaxbParserExceprion(e.getMessage(),e);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new JaxbParserExceprion(e.getMessage(),e);
         }
         return list;
     }

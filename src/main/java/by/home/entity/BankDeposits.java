@@ -23,8 +23,8 @@ public class BankDeposits {
     public void setList(List<BankDeposit> list) {
         this.list = list;
     }
-    public boolean add(BankDeposit st) {
-        return list.add(st);
+    public boolean add(BankDeposit deposit) {
+        return list.add(deposit);
     }
 
     public List<BankDeposit> getList() {
